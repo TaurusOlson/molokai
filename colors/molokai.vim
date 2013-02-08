@@ -74,6 +74,16 @@ hi PmenuThumb      guifg=#66D9EF
 
 " }}}
 
+
+" Tabs {{{
+
+hi TabLine      guibg=bg guifg=#AAAAAA gui=bold
+hi TabLineSel   guifg=#FD971F guibg=bg gui=none
+hi TabLineFill  guifg=bg guibg=#AAAAAA
+
+" }}}
+
+
 hi PreCondit       guifg=#A6E22E               gui=bold
 hi PreProc         guifg=#A6E22E
 hi Question        guifg=#66D9EF
