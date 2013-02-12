@@ -34,6 +34,14 @@ hi Debug           guifg=#BCA3A3               gui=bold
 hi Define          guifg=#66D9EF
 hi Delimiter       guifg=#8F8F8F
 
+" Msg {{{
+
+hi ErrorMsg        guifg=#F92672 guibg=#232526 gui=bold
+hi ModeMsg         guifg=#E6DB74
+hi MoreMsg         guifg=#E6DB74
+
+" }}}
+
 " Diff {{{
 
 hi DiffAdd                       guibg=#1E0010
@@ -45,7 +53,6 @@ hi DiffText                      guibg=#4C4745 gui=italic,bold
 
 hi Directory       guifg=#A6E22E               gui=bold
 hi Error           guifg=#960050 guibg=#1E0010
-hi ErrorMsg        guifg=#F92672 guibg=#232526 gui=bold
 hi Exception       guifg=#A6E22E               gui=bold
 hi Float           guifg=#AE81FF
 hi FoldColumn      guifg=#465457 guibg=#000000
@@ -58,11 +65,8 @@ hi IncSearch       guifg=#C4BE89 guibg=#000000
 hi Keyword         guifg=#F92672               gui=bold
 hi Label           guifg=#E6DB74               gui=none
 hi Macro           guifg=#C4BE89               gui=italic
-hi SpecialKey      guifg=#66D9EF               gui=italic
 
 hi MatchParen      guifg=#000000 guibg=#FD971F gui=bold
-hi ModeMsg         guifg=#E6DB74
-hi MoreMsg         guifg=#E6DB74
 hi Operator        guifg=#F92672
 
 " Completion menu {{{
@@ -77,8 +81,8 @@ hi PmenuThumb      guifg=#66D9EF
 
 " Tabs {{{
 
-hi TabLine      guibg=bg guifg=#AAAAAA gui=bold
-hi TabLineSel   guifg=#FD971F guibg=bg gui=none
+hi TabLine      guibg=bg guifg=#AAAAAA gui=none
+hi TabLineSel   guifg=fg guibg=#F92672  gui=bold
 hi TabLineFill  guifg=bg guibg=#AAAAAA
 
 " }}}
@@ -91,9 +95,15 @@ hi Repeat          guifg=#F92672               gui=bold
 hi Search          guifg=#000000 guibg=#FD971F
 " marks column
 hi SignColumn      guifg=#A6E22E guibg=#232526
+
+" Special {{{
+
 hi SpecialChar     guifg=#F92672               gui=bold
 hi SpecialComment  guifg=#465457               gui=bold
 hi Special         guifg=#66D9EF guibg=bg      gui=italic
+hi SpecialKey      guifg=#66D9EF               gui=italic
+
+" }}}
 
 " Spell {{{
 
@@ -110,8 +120,8 @@ hi Statement       guifg=#F92672               gui=bold
 
 " Statusline {{{
 
-hi StatusLine      guifg=#262626 guibg=fg
-hi StatusLineNC    guifg=#262626 guibg=#080808
+hi StatusLine      guifg=fg guibg=#F92672 gui=bold
+hi StatusLineNC    guifg=#080808 guibg=#262626 gui=bold
 
 " }}}
 
@@ -137,8 +147,7 @@ hi CursorLine                    guibg=#262626
 hi CursorColumn                  guibg=#293739
 hi ColorColumn                   guibg=#232526
 hi LineNr          guifg=#AAAAAA guibg=bg
-hi CursorLineNr    guifg=#FD971F guibg=bg
+hi CursorLineNr    guifg=#FD971F guibg=#262626
 hi NonText         guifg=#465457
-hi SpecialKey      guifg=#465457
 
 " vim: set fdm=marker:"
