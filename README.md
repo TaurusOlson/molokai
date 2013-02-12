@@ -18,5 +18,6 @@ The pathogen way:
     
     git clone https://github.com/TaurusOlson/molokai.git ~/.vim/bundle/molokai
 
+## Screenshot
 
-
+![screenshot](http://i2.minus.com/iNNBXqQaZRPEb.png)
