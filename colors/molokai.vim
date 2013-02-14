@@ -22,6 +22,18 @@ if version > 580
 endif
 let g:colors_name="molokai"
 
+" Colors 
+let s:molokai_orange = "#FD971F"
+let s:molokai_white  = "#F8F8F2"
+let s:molokai_black  = "#1A1A1A"
+let s:molokai_grey   = "#AAAAAA"
+let s:molokai_brown  = "#262626"
+let s:molokai_pink   = "#F92672"
+
+function! Colorize(group, fg, bg, gui)
+    exe "hi " .a:group. " guifg=" .a:fg. " guibg=".a:bg. " gui="a:gui
+endfunction
+
 
 hi Boolean         guifg=#AE81FF
 hi Character       guifg=#E6DB74
@@ -101,7 +113,8 @@ hi SignColumn      guifg=#A6E22E guibg=#232526
 hi SpecialChar     guifg=#F92672               gui=bold
 hi SpecialComment  guifg=#465457               gui=bold
 hi Special         guifg=#66D9EF guibg=bg      gui=italic
-hi SpecialKey      guifg=#66D9EF               gui=italic
+hi SpecialKey      guifg=#262626               gui=none
+hi NonText         guifg=#465457
 
 " }}}
 
@@ -116,12 +129,12 @@ endif
 
 " }}}
 
-hi Statement       guifg=#F92672               gui=bold
+call Colorize("Statement", s:molokai_pink, "NONE", "bold")
 
 " Statusline {{{
 
-hi StatusLine      guifg=fg guibg=#F92672 gui=bold
-hi StatusLineNC    guifg=#080808 guibg=#262626 gui=bold
+call Colorize("Statusline", "fg", s:molokai_pink, "bold")
+call Colorize("StatuslineNC", "fg", s:molokai_brown, "bold")
 
 " }}}
 
@@ -135,19 +148,21 @@ hi Typedef         guifg=#66D9EF
 hi Type            guifg=#66D9EF               gui=none
 hi Underlined      guifg=#808080               gui=underline
 
-hi VertSplit       guifg=#808080 guibg=bg gui=bold
+hi VertSplit       guifg=#808080 guibg=bg      gui=bold
 hi VisualNOS                     guibg=#403D3D
 hi Visual                        guibg=#403D3D
 hi WarningMsg      guifg=#FFFFFF guibg=#333333 gui=bold
 hi WildMenu        guifg=#66D9EF guibg=#000000
 
-hi Normal          guifg=#F8F8F2 guibg=#1B1E1F
-hi Comment         guifg=#AAAAAA
-hi CursorLine                    guibg=#262626
-hi CursorColumn                  guibg=#293739
-hi ColorColumn                   guibg=#232526
-hi LineNr          guifg=#AAAAAA guibg=bg
-hi CursorLineNr    guifg=#FD971F guibg=#262626
-hi NonText         guifg=#465457
+
+call Colorize("Normal"       , s:molokai_white  , s:molokai_black , "none")
+call Colorize("Comment"      , s:molokai_grey   , "NONE"          , "none")
+call Colorize("CursorLine"   , "NONE"           , s:molokai_brown , "none")
+call Colorize("CursorColumn" , "NONE"           , s:molokai_brown , "none")
+call Colorize("ColorColumn"  , "NONE"           , s:molokai_brown , "none")
+call Colorize("LineNr"       , s:molokai_grey   , "bg"            , "none")
+call Colorize("CursorLineNr" , s:molokai_orange , s:molokai_brown , "none")
+
+
 
 " vim: set fdm=marker:"
