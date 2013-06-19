@@ -59,29 +59,28 @@ call Colorize("MoreMsg"  , s:molokai_yellow , "NONE"    , "none")
 
 " Diff {{{
 
-call Colorize("DiffAdd"  , "NONE" , "#1E0010"    , "none")
-call Colorize("DiffChange"  , "#89807D" , "#4C4745"    , "none")
-call Colorize("DiffDelete"  , "#960050" , "#1E0010"    , "none")
-call Colorize("DiffText"  , "NONE" , "#4C4745"    , "italic")
+call Colorize("DiffAdd"    , "NONE"    , "#1E0010" , "none")
+call Colorize("DiffChange" , "#89807D" , "#4C4745" , "none")
+call Colorize("DiffDelete" , "#960050" , "#1E0010" , "none")
+call Colorize("DiffText"   , "NONE"    , "#4C4745" , "italic")
 
 " }}}
 
-call Colorize("Directory"  , "#A6E22E" , "NONE"    , "bold")
-call Colorize("Error"  , "#960050" , "#1E0010"    , "NONE")
-call Colorize("Exception"  , "#A6E22E" , "NONE"    , "bold")
-call Colorize("Float"  , "#AE81FF" , "NONE"    , "none")
-call Colorize("FoldColumn"  , "#465457" , "#000000"    , "none")
-call Colorize("Folded"  , "#666666" , "bg"    , "none")
-call Colorize("Function"  , "#A6E22E" , "NONE"    , "none")
-call Colorize("Identifier", s:molokai_orange, "NONE", "none")
-call Colorize("Ignore", "#808080", "bg", "none")
-call Colorize("IncSearch", "#C4BE89", "#000000", "none")
-call Colorize("Keyword", s:molokai_pink, "NONE", "bold")
-call Colorize("Label", s:molokai_yellow, "NONE", "none")
-call Colorize("Macro", "#C4BE89", "NONE", "italic")
-
-call Colorize("MatchParen", "#000000", s:molokai_orange, "none")
-call Colorize("Operator", s:molokai_pink, "NONE", "none")
+call Colorize("Directory"  , "#A6E22E"        , "NONE"           , "bold")
+call Colorize("Error"      , "#960050"        , "#1E0010"        , "NONE")
+call Colorize("Exception"  , "#A6E22E"        , "NONE"           , "bold")
+call Colorize("Float"      , "#AE81FF"        , "NONE"           , "none")
+call Colorize("FoldColumn" , "#465457"        , "#000000"        , "none")
+call Colorize("Folded"     , "#666666"        , "bg"             , "none")
+call Colorize("Function"   , "#A6E22E"        , "NONE"           , "none")
+call Colorize("Identifier" , s:molokai_orange , "NONE"           , "none")
+call Colorize("Ignore"     , "#808080"        , "bg"             , "none")
+call Colorize("IncSearch"  , "#C4BE89"        , "#000000"        , "none")
+call Colorize("Keyword"    , s:molokai_pink   , "NONE"           , "bold")
+call Colorize("Label"      , s:molokai_yellow , "NONE"           , "none")
+call Colorize("Macro"      , "#C4BE89"        , "NONE"           , "italic")
+call Colorize("MatchParen" , "#000000"        , s:molokai_orange , "none")
+call Colorize("Operator"   , s:molokai_pink   , "NONE"           , "none")
 
 " Completion menu {{{
 
@@ -103,22 +102,22 @@ call Colorize("TabLineFill" , "bg" , s:molokai_black , "none")
 " }}}
 
 
-call Colorize("PreCondit" , "#A6E22E" , "NONE", "bold")
-call Colorize("PreProc" , "#A6E22E" , "NONE", "bold")
-call Colorize("Question" , s:molokai_blue, "NONE", "bold")
-call Colorize("Repeat", s:molokai_pink, "NONE", "bold")
-call Colorize("Search", "#000000", s:molokai_orange, "none")
+call Colorize("PreCondit" , "#A6E22E"      , "NONE"           , "bold")
+call Colorize("PreProc"   , "#A6E22E"      , "NONE"           , "bold")
+call Colorize("Question"  , s:molokai_blue , "NONE"           , "bold")
+call Colorize("Repeat"    , s:molokai_pink , "NONE"           , "bold")
+call Colorize("Search"    , "#000000"      , s:molokai_orange , "none")
 
 " marks column
 call Colorize("SignColumn", "#A6E22E", "bg", "bold")
 
 " Special {{{
 
-call Colorize("SpecialKey", s:molokai_brown, "NONE", "none")
-call Colorize("SpecialChar", s:molokai_pink, "NONE", "bold")
-call Colorize("SpecialComment", "#465457", "NONE", "bold")
-call Colorize("Special", s:molokai_blue, "bg", "italic")
-call Colorize("NonText", "#465457", "NONE", "none")
+call Colorize("SpecialKey"     , s:molokai_brown , "NONE" , "none")
+call Colorize("SpecialChar"    , s:molokai_pink  , "NONE" , "bold")
+call Colorize("SpecialComment" , "#465457"       , "NONE" , "bold")
+call Colorize("Special"        , s:molokai_blue  , "bg"   , "italic")
+call Colorize("NonText"        , "#465457"       , "NONE" , "none")
 
 " }}}
 
@@ -137,8 +136,8 @@ call Colorize("Statement", s:molokai_pink, "NONE", "bold")
 
 " Statusline {{{
 
-call Colorize("Statusline", "fg", s:molokai_pink, "bold")
-call Colorize("StatuslineNC", "fg", s:molokai_brown, "bold")
+call Colorize("Statusline"   , "fg" , s:molokai_pink  , "bold")
+call Colorize("StatuslineNC" , "fg" , s:molokai_brown , "bold")
 
 " }}}
 
