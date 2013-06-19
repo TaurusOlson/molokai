@@ -23,98 +23,102 @@ endif
 let g:colors_name="molokai"
 
 " Colors 
-let s:molokai_orange = "#FD971F"
-let s:molokai_white  = "#F8F8F2"
-let s:molokai_black  = "#1A1A1A"
-let s:molokai_grey   = "#AAAAAA"
-let s:molokai_brown  = "#262626"
-let s:molokai_pink   = "#F92672"
+let s:molokai_orange    = "#FD971F"
+let s:molokai_white     = "#F8F8F2"
+let s:molokai_black     = "#1A1A1A"
+let s:molokai_grey      = "#AAAAAA"
+let s:molokai_dark_grey = "#555555"
+let s:molokai_brown     = "#262626"
+let s:molokai_pink      = "#F92672"
+let s:molokai_yellow    = "#E6DB74"
+let s:molokai_blue      = "#66D9EF"
 
 function! Colorize(group, fg, bg, gui)
     exe "hi " .a:group. " guifg=" .a:fg. " guibg=".a:bg. " gui="a:gui
 endfunction
 
 
-hi Boolean         guifg=#AE81FF
-hi Character       guifg=#E6DB74
-hi Number          guifg=#AE81FF
-hi String          guifg=#E6DB74
-hi Conditional     guifg=#F92672               gui=bold
-hi Constant        guifg=#AE81FF               gui=bold
-hi Cursor          guifg=#000000 guibg=#F8F8F0
-hi Debug           guifg=#BCA3A3               gui=bold
-hi Define          guifg=#66D9EF
-hi Delimiter       guifg=#8F8F8F
+call Colorize("Character"   , s:molokai_yellow , "NONE"    , "none")
+call Colorize("String"      , s:molokai_yellow , "NONE"    , "none")
+call Colorize("Boolean"     , "#AE81FF"        , "NONE"    , "none")
+call Colorize("Number"      , "#AE81FF"        , "NONE"    , "none")
+call Colorize("Conditional" , s:molokai_orange , "NONE"    , "bold")
+call Colorize("Constant"    , "#AE81FF"        , "NONE"    , "bold")
+call Colorize("Cursor"      , "#000000"        , "#F8F8F0" , "bold")
+call Colorize("Debug"       , "#BCA3A3"        , "NONE"    , "bold")
+call Colorize("Define"      , s:molokai_blue   , "NONE"    , "bold")
+call Colorize("Delimiter"   , "#8F8F8F"        , "NONE"    , "bold")
 
 " Msg {{{
 
-hi ErrorMsg        guifg=#F92672 guibg=#232526 gui=bold
-hi ModeMsg         guifg=#E6DB74
-hi MoreMsg         guifg=#E6DB74
+call Colorize("ErrorMsg" , s:molokai_pink   , "#232526" , "bold")
+call Colorize("ModeMsg"  , s:molokai_yellow , "NONE"    , "none")
+call Colorize("MoreMsg"  , s:molokai_yellow , "NONE"    , "none")
 
 " }}}
 
 " Diff {{{
 
-hi DiffAdd                       guibg=#1E0010
-hi DiffChange      guifg=#89807D guibg=#4C4745
-hi DiffDelete      guifg=#960050 guibg=#1E0010
-hi DiffText                      guibg=#4C4745 gui=italic,bold
+call Colorize("DiffAdd"  , "NONE" , "#1E0010"    , "none")
+call Colorize("DiffChange"  , "#89807D" , "#4C4745"    , "none")
+call Colorize("DiffDelete"  , "#960050" , "#1E0010"    , "none")
+call Colorize("DiffText"  , "NONE" , "#4C4745"    , "italic")
 
 " }}}
 
-hi Directory       guifg=#A6E22E               gui=bold
-hi Error           guifg=#960050 guibg=#1E0010
-hi Exception       guifg=#A6E22E               gui=bold
-hi Float           guifg=#AE81FF
-hi FoldColumn      guifg=#465457 guibg=#000000
-hi Folded          guifg=#666666 guibg=bg
-hi Function        guifg=#A6E22E
-hi Identifier      guifg=#FD971F
-hi Ignore          guifg=#808080 guibg=bg
-hi IncSearch       guifg=#C4BE89 guibg=#000000
+call Colorize("Directory"  , "#A6E22E" , "NONE"    , "bold")
+call Colorize("Error"  , "#960050" , "#1E0010"    , "NONE")
+call Colorize("Exception"  , "#A6E22E" , "NONE"    , "bold")
+call Colorize("Float"  , "#AE81FF" , "NONE"    , "none")
+call Colorize("FoldColumn"  , "#465457" , "#000000"    , "none")
+call Colorize("Folded"  , "#666666" , "bg"    , "none")
+call Colorize("Function"  , "#A6E22E" , "NONE"    , "none")
+call Colorize("Identifier", s:molokai_orange, "NONE", "none")
+call Colorize("Ignore", "#808080", "bg", "none")
+call Colorize("IncSearch", "#C4BE89", "#000000", "none")
+call Colorize("Keyword", s:molokai_pink, "NONE", "bold")
+call Colorize("Label", s:molokai_yellow, "NONE", "none")
+call Colorize("Macro", "#C4BE89", "NONE", "italic")
 
-hi Keyword         guifg=#F92672               gui=bold
-hi Label           guifg=#E6DB74               gui=none
-hi Macro           guifg=#C4BE89               gui=italic
-
-hi MatchParen      guifg=#000000 guibg=#FD971F gui=bold
-hi Operator        guifg=#F92672
+call Colorize("MatchParen", "#000000", s:molokai_orange, "none")
+call Colorize("Operator", s:molokai_pink, "NONE", "none")
 
 " Completion menu {{{
 
-hi Pmenu           guifg=#66D9EF guibg=#000000
-hi PmenuSel                      guibg=#808080
-hi PmenuSbar                     guibg=#080808
-hi PmenuThumb      guifg=#66D9EF
+call Colorize("Pmenu"      , s:molokai_blue   , s:molokai_brown , "none")
+call Colorize("PmenuSel"   , s:molokai_orange , "bg"            , "none")
+call Colorize("PmenuSbar"  , "NONE"           , "#080808"       , "none")
+call Colorize("PmenuThumb" , s:molokai_pink   , "NONE"          , "none")
+
 
 " }}}
 
 
 " Tabs {{{
 
-hi TabLine      guibg=bg guifg=#AAAAAA gui=none
-hi TabLineSel   guifg=fg guibg=#F92672  gui=bold
-hi TabLineFill  guifg=bg guibg=#AAAAAA
+call Colorize("TabLine"     , "fg" , s:molokai_black , "none")
+call Colorize("TabLineSel"  , "fg" , s:molokai_pink , "bold")
+call Colorize("TabLineFill" , "bg" , s:molokai_black , "none")
 
 " }}}
 
 
-hi PreCondit       guifg=#A6E22E               gui=bold
-hi PreProc         guifg=#A6E22E
-hi Question        guifg=#66D9EF
-hi Repeat          guifg=#F92672               gui=bold
-hi Search          guifg=#000000 guibg=#FD971F
+call Colorize("PreCondit" , "#A6E22E" , "NONE", "bold")
+call Colorize("PreProc" , "#A6E22E" , "NONE", "bold")
+call Colorize("Question" , s:molokai_blue, "NONE", "bold")
+call Colorize("Repeat", s:molokai_pink, "NONE", "bold")
+call Colorize("Search", "#000000", s:molokai_orange, "none")
+
 " marks column
-hi SignColumn      guifg=#A6E22E guibg=#232526
+call Colorize("SignColumn", "#A6E22E", "bg", "bold")
 
 " Special {{{
 
-hi SpecialChar     guifg=#F92672               gui=bold
-hi SpecialComment  guifg=#465457               gui=bold
-hi Special         guifg=#66D9EF guibg=bg      gui=italic
-hi SpecialKey      guifg=#262626               gui=none
-hi NonText         guifg=#465457
+call Colorize("SpecialKey", s:molokai_brown, "NONE", "none")
+call Colorize("SpecialChar", s:molokai_pink, "NONE", "bold")
+call Colorize("SpecialComment", "#465457", "NONE", "bold")
+call Colorize("Special", s:molokai_blue, "bg", "italic")
+call Colorize("NonText", "#465457", "NONE", "none")
 
 " }}}
 
@@ -138,30 +142,26 @@ call Colorize("StatuslineNC", "fg", s:molokai_brown, "bold")
 
 " }}}
 
-hi StorageClass    guifg=#FD971F               gui=italic
-hi Structure       guifg=#66D9EF
-hi Tag             guifg=#F92672               gui=italic
-hi Title           guifg=#ef5939
-hi Todo            guifg=#FD971F guibg=bg      gui=bold
-
-hi Typedef         guifg=#66D9EF
-hi Type            guifg=#66D9EF               gui=none
-hi Underlined      guifg=#808080               gui=underline
-
-hi VertSplit       guifg=#808080 guibg=bg      gui=bold
-hi VisualNOS                     guibg=#403D3D
-hi Visual                        guibg=#403D3D
-hi WarningMsg      guifg=#FFFFFF guibg=#333333 gui=bold
-hi WildMenu        guifg=#66D9EF guibg=#000000
-
-
-call Colorize("Normal"       , s:molokai_white  , s:molokai_black , "none")
-call Colorize("Comment"      , s:molokai_grey   , "NONE"          , "none")
-call Colorize("CursorLine"   , "NONE"           , s:molokai_brown , "none")
-call Colorize("CursorColumn" , "NONE"           , s:molokai_brown , "none")
-call Colorize("ColorColumn"  , "NONE"           , s:molokai_brown , "none")
-call Colorize("LineNr"       , s:molokai_grey   , "bg"            , "none")
-call Colorize("CursorLineNr" , s:molokai_orange , s:molokai_brown , "none")
+call Colorize("StorageClass" , s:molokai_orange    , "NONE"          , "italic")
+call Colorize("Todo"         , s:molokai_orange    , "bg"            , "bold")
+call Colorize("Tag"          , s:molokai_pink      , "NONE"          , "italic")
+call Colorize("Structure"    , s:molokai_blue      , "NONE"          , "none")
+call Colorize("Title"        , "#ef5939"           , "NONE"          , "none")
+call Colorize("Typedef"      , s:molokai_blue      , "NONE"          , "none")
+call Colorize("Type"         , s:molokai_blue      , "NONE"          , "none")
+call Colorize("Underlined"   , "#808080"           , "NONE"          , "underline")
+call Colorize("VertSplit"    , "#808080"           , "bg"            , "bold")
+call Colorize("VisualNOS"    , "NONE"              , "#403D3D"       , "none")
+call Colorize("Visual"       , "NONE"              , "#403D3D"       , "none")
+call Colorize("WarningMsg"   , "#FFFFFF"           , "#333333"       , "bold")
+call Colorize("WildMenu"     , s:molokai_blue      , "bg"            , "none")
+call Colorize("Normal"       , s:molokai_white     , s:molokai_black , "none")
+call Colorize("Comment"      , s:molokai_grey      , "NONE"          , "none")
+call Colorize("CursorLine"   , "NONE"              , s:molokai_brown , "none")
+call Colorize("CursorColumn" , "NONE"              , s:molokai_brown , "none")
+call Colorize("ColorColumn"  , "NONE"              , s:molokai_brown , "none")
+call Colorize("LineNr"       , s:molokai_dark_grey , "bg"            , "none")
+call Colorize("CursorLineNr" , s:molokai_orange    , s:molokai_brown , "none")
 
 
 
