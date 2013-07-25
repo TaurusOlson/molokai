@@ -22,16 +22,18 @@ if version > 580
 endif
 let g:colors_name="molokai"
 
-" Colors 
-let s:molokai_orange    = "#FD971F"
-let s:molokai_white     = "#F8F8F2"
-let s:molokai_black     = "#1A1A1A"
-let s:molokai_grey      = "#AAAAAA"
-let s:molokai_dark_grey = "#555555"
-let s:molokai_brown     = "#262626"
-let s:molokai_pink      = "#F92672"
-let s:molokai_yellow    = "#E6DB74"
-let s:molokai_blue      = "#66D9EF"
+" Colors
+let s:molokai_orange     = "#FD971F"
+let s:molokai_white      = "#F8F8F2"
+let s:molokai_black      = "#1A1A1A"
+let s:molokai_grey       = "#AAAAAA"
+let s:molokai_dark_grey  = "#555555"
+let s:molokai_light_grey = "#4C4745"
+let s:molokai_brown      = "#262626"
+let s:molokai_pink       = "#F92672"
+let s:molokai_yellow     = "#E6DB74"
+let s:molokai_blue       = "#66D9EF"
+let s:molokai_green      = "#A6E22E"
 
 function! Colorize(group, fg, bg, gui)
     exe "hi " .a:group. " guifg=" .a:fg. " guibg=".a:bg. " gui="a:gui
@@ -59,20 +61,20 @@ call Colorize("MoreMsg"  , s:molokai_yellow , "NONE"    , "none")
 
 " Diff {{{
 
-call Colorize("DiffAdd"    , "NONE"    , "#1E0010" , "none")
-call Colorize("DiffChange" , "#89807D" , "#4C4745" , "none")
-call Colorize("DiffDelete" , "#960050" , "#1E0010" , "none")
-call Colorize("DiffText"   , "NONE"    , "#4C4745" , "italic")
+call Colorize("DiffAdd"    , "#1E0010"      , s:molokai_green      , "none")
+call Colorize("DiffChange" , "fg"           , s:molokai_light_grey , "none")
+call Colorize("DiffDelete" , "#960050"      , "#1E0010"            , "none")
+call Colorize("DiffText"   , s:molokai_blue , s:molokai_light_grey , "italic")
 
 " }}}
 
-call Colorize("Directory"  , "#A6E22E"        , "NONE"           , "bold")
+call Colorize("Directory"  , s:molokai_green  , "NONE"           , "bold")
 call Colorize("Error"      , "#960050"        , "#1E0010"        , "NONE")
-call Colorize("Exception"  , "#A6E22E"        , "NONE"           , "bold")
+call Colorize("Exception"  , s:molokai_green  , "NONE"           , "bold")
 call Colorize("Float"      , "#AE81FF"        , "NONE"           , "none")
 call Colorize("FoldColumn" , "#465457"        , "#000000"        , "none")
 call Colorize("Folded"     , "#666666"        , "bg"             , "none")
-call Colorize("Function"   , "#A6E22E"        , "NONE"           , "none")
+call Colorize("Function"   , s:molokai_green  , "NONE"           , "none")
 call Colorize("Identifier" , s:molokai_orange , "NONE"           , "none")
 call Colorize("Ignore"     , "#808080"        , "bg"             , "none")
 call Colorize("IncSearch"  , "#C4BE89"        , "#000000"        , "none")
@@ -96,20 +98,20 @@ call Colorize("PmenuThumb" , s:molokai_pink   , "NONE"          , "none")
 " Tabs {{{
 
 call Colorize("TabLine"     , "fg" , s:molokai_black , "none")
-call Colorize("TabLineSel"  , "fg" , s:molokai_pink , "bold")
+call Colorize("TabLineSel"  , "bg" , s:molokai_orange , "bold")
 call Colorize("TabLineFill" , "bg" , s:molokai_black , "none")
 
 " }}}
 
 
-call Colorize("PreCondit" , "#A6E22E"      , "NONE"           , "bold")
-call Colorize("PreProc"   , "#A6E22E"      , "NONE"           , "bold")
+call Colorize("PreCondit" , s:molokai_green      , "NONE"           , "bold")
+call Colorize("PreProc"   , s:molokai_green      , "NONE"           , "bold")
 call Colorize("Question"  , s:molokai_blue , "NONE"           , "bold")
 call Colorize("Repeat"    , s:molokai_pink , "NONE"           , "bold")
 call Colorize("Search"    , "#000000"      , s:molokai_orange , "none")
 
 " marks column
-call Colorize("SignColumn", "#A6E22E", "bg", "bold")
+call Colorize("SignColumn", s:molokai_green, "bg", "bold")
 
 " Special {{{
 
@@ -136,7 +138,7 @@ call Colorize("Statement", s:molokai_pink, "NONE", "bold")
 
 " Statusline {{{
 
-call Colorize("Statusline"   , "fg" , s:molokai_pink  , "bold")
+call Colorize("Statusline"   , "bg" , s:molokai_orange  , "none")
 call Colorize("StatuslineNC" , "fg" , s:molokai_brown , "bold")
 
 " }}}
